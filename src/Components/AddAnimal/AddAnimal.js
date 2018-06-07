@@ -18,7 +18,7 @@ class AddAnimal extends Component{
     render(){
         return(
             <div>
-                Add Animal
+                Add New Animal
                 <button onClick={()=>console.log(this.props)}>PROPS</button>
                 
             </div>
