@@ -1,0 +1,1 @@
+select * from shelter_users left join shelters on code=shelter_code;

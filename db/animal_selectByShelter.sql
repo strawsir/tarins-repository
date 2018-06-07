@@ -1,0 +1,1 @@
+select * from animals where shelter_code = $1;

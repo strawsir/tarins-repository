@@ -1,0 +1,95 @@
+.master{
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    
+}
+.main{
+    width: 100%;
+    background: grey;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+.left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    padding-left: 5%;
+}
+.userInfo{
+display: flex;
+flex-direction: column;
+
+}
+.right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.menu{
+    height: 50%;
+    width: auto;
+    padding-right: 10%;   
+}
+
+.dropdown{
+    height: 20vh;
+    background: grey;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .5s all ease;
+    padding-top: 10vh;
+    
+
+}
+.padding{
+    padding-bottom: 5vh;
+}
+.desktopmenu{
+    display: flex;
+    width: 100%;
+}
+.desktopmenu>ul{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    list-style: none;
+}
+.hide{
+    height: 0px;
+}
+
+
+.dropdown>ul{
+    list-style: none;
+    align-self: flex-end;
+}
+.dropdown>ul>li{
+    padding: 2%;
+}
+@media(min-width:992px){
+    .dropdown{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+
+}
+@media(max-width:991px){
+    .desktopmenu{
+        display: none;
+    }
+}

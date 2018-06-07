@@ -1,0 +1,1 @@
+select * from shelter_users  full outer join shelters on code=shelter_code where username = $1 and password = $2 and code = $3;
