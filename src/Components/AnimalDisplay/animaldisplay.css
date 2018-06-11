@@ -1,0 +1,265 @@
+
+    .noDisplay{
+        display: none;
+    }
+.displaySingleAnimal{
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    padding-top: 1vh;
+    border-radius: 1%;
+    margin-bottom: 15vh;
+    margin-top: 5vh;
+    align-items: center;
+    
+    border: solid 5px rgba(128, 128, 128, 0.651);
+}
+
+.successful{
+    height: 100vh;
+    background-image: url(../AnimalDisplay/images/loginbkg.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+.top{
+    display: flex;
+    justify-content: center;
+}
+
+.mainImage{
+    height: auto;
+    width: 40%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.noDisplay{
+    display: none;
+}
+
+.notes{
+    text-align: left;
+    padding-top: 3%;
+    padding-left: 1%;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    
+}
+
+.weight{
+    width: 50px;
+}
+
+
+
+.name{
+    margin-top: 2%;
+    margin-left: 4%;
+    border-radius: 5%;
+    margin-right: 2%;
+    background: rgb(170, 170, 170);
+    display: unset;
+    justify-content: baseline;
+    float: left;
+    width: 46%;
+    font-size: 15px;
+}
+
+.imgdiv>img{
+    margin-top: 3%;
+    margin-left: 4.5%;
+    margin-right: 2%;
+    border:rgb(170, 170, 170) solid 7px;
+    border-radius: 5%;
+    float: left;
+}
+
+.displayheader{
+    background: whitesmoke;
+    border: solid 5px lightgray;
+    width: 310px;
+    height: 40vh;
+    border-radius: 5%;
+    
+    
+}
+
+.listcontainer{
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+.box{
+    
+    display: flex;
+    justify-content: center;
+}
+.male{
+    background-image: url(./images/smallbb.gif);
+    
+    
+}
+
+.female{
+    
+    background-image: url(./images/smallgb.gif)
+}
+
+.light{
+    background: lightblue;
+}
+
+.dark{
+    background: lightskyblue;
+}
+.lightf{
+    background: rgb(255, 210, 217);
+}
+
+.darkf{
+    background: lightpink;
+}
+
+.exitIcon{
+    height: 6vh;
+    width: auto;
+    
+}
+
+
+.infoList{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 300px;
+    height: 35vh;
+    border-radius: 5%;
+    padding: 10px;
+    background: whitesmoke;
+    border: solid 5px lightgray;
+    
+}
+
+.infodiv{
+    height: 80px;
+    background: whitesmoke;
+    width: 300px;
+}
+
+.list{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons{
+    padding-bottom: 2px;
+    width: 325px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editIcon{
+    height: 5vh;
+    width: auto;
+    padding-left: 2px;
+}
+
+
+
+.editDeleteBox>img{
+    height: 6vh;
+    width: auto;
+}
+
+.submitButton{
+    height: 35px;
+}
+
+@media(min-width:992px){
+    .displaySingleAnimal{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .mobile{
+        display: flex;
+        align-content: space-evenly;
+        
+    }
+    .iconDisplay{
+        display: none;
+    }
+
+    .displaySingleAnimal{
+        height: 60vh;
+    }
+    .box{
+        display: none;
+    }
+    .fullIcons{
+        height: 40px;
+        width: auto;
+        
+    }
+    .fullIconsbox{
+        position: absolute;
+        height: 60vh;
+        width: 80px;
+        margin-left: 23vw;
+    }
+    .editDeleteBox{
+       position: absolute;
+       width: 100px;
+       
+        margin-left: 20vw;
+        margin-top: 22vh;
+    }
+    .editDeleteBox>img{
+        height: 40px;
+        width: auto;
+        margin: 3%;
+    }
+
+    .enter{
+        position: absolute;
+        padding-top: 50vh;
+        padding-left: 50px;
+    }
+    
+}
+@media(max-width:991px){
+    .mobile{
+        display: flex;
+        flex-direction: column;
+    }
+    .fullIcons{
+        display: none;
+    }
+    .exitIcon{
+        height: 6vh;
+        width: 6vh;
+        align-self: center;
+        
+        
+    }
+    .submitButton{
+        padding-top: 2%;
+    }
+    .editDeleteBox{
+        display: none;
+    }
+}

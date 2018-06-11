@@ -1,18 +1,66 @@
-.animalDisplay{
-    padding-top: 10vh;
-    width: 100vw;
-    background: pink;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.body{
+    background: #eaedf2;
 }
+.animalDisplay{
+    padding-top: 2vh;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+.singleDisplay{
+    display: flex;
+    flex-direction: column;
+}
+.bkg{
+    
+    background-image: url(../AnimalDisplay/images/loginbkglarge.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 
+}
+.mainbkg{
+    background: #eaedf2;
+   height: 100%;
+}
 .individual{
-    margin: 1%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    width: 250px;
+    height: 255px;
+    background: rgba(80, 80, 80, 0.514);
+}
+.addIcon{
+    padding-top: 10px;
+    height: 40px;
+    width: auto;
 }
 .animalImg{
-    height: 25vh;
+    
+    height: 55%;
     width: auto;
+    max-width: 90%;
+}
+
+.sheltertitle{
+    font-family: 'Comfortaa', cursive;
+    font-size: 25px;
+}
+
+.individual>img{
+    padding: 10px;
+    border-radius: 5%;
+    border: 1px solid rgba(7, 7, 7, 0.466);
+    background: rgba(61, 61, 61, 0.356)
+}
+
+.femaleBorder>img{
+    border: 5px solid pink;
 }
 
 .noDisplay{

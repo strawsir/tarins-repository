@@ -7,7 +7,7 @@ export default class Header extends Component{
         super(props)
 
         this.state={
-            toggle: false,
+            toggleNav: false,
             animalCount: 0
         }
         this.toggleNav=this.toggleNav.bind(this);
@@ -15,12 +15,22 @@ export default class Header extends Component{
     }
 
     componentDidMount(){
+        console.log(this.state.animalCount, this.props)
         this.count();
     }
 
+    shouldComponentUpdate(){
+        let a = this.props.animals;
+        let count = 0;
+        if(a !==undefined){ a.forEach(animal=>{count +=1})}
+        return count != this.state.animalCount
+    }
+
+    componentDidUpdate(){
+        this.count()
+    }
+
     
-
-
     count(){
         let animals = this.props.animals;
         let count = 0;
@@ -30,31 +40,34 @@ export default class Header extends Component{
             });
             this.setState({animalCount: count})
             console.log(this.state.animalCount)
+        }else if (this.props.animals === undefined){
+            console.log('No Animals Found')
         }
+
+        
     }
 
     toggleNav(){
-        this.setState({toggle: !this.state.toggle})
+        this.setState({toggleNav: !this.state.toggleNav})
+        console.log(this.state.toggleNav)
     }
 
     render(){
         let u = this.props.user;
         return(
-            <div onMouseMove={()=>{
-                if(this.state.animalCount === 0){
-                    this.count()
-                }
-            }} className='master'>
-            
+            <div className='master'>
+            <style>
+            @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
+</style>
             <div className='main'>
             <div className="left">
             <div className="userInfo">
-                {`Welcome ${u.firstname}`}
+                {`Welcome ${u.firstname}!`}
             </div>
             <div className="shelterInfo">
-                {`Shelter Name: ${u.name}`}
+                {`${u.name}`}
             </div>
-            <div onClick={()=>this.count()} className="animalCount">
+            <div className="animalCount">
             {`${this.state.animalCount} animal(s) in shelter`}
             </div>
             </div>
@@ -62,24 +75,23 @@ export default class Header extends Component{
             <img className="menu" onClick={()=>this.toggleNav()} src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=""/>
             <div className="desktopmenu">
             <ul>
-                <li>HOME</li>
-                <li>ANIMALS</li>
-                <li>ADOPTERS</li>
-                <li>SIGN OUT</li>
+            <Link className='link' to='/'><li>HOME</li></Link>
+            <Link className='link' to='/'><li>ANIMALS</li></Link>
+            <Link className='link' to='/'><li>ADOPTERS</li></Link>
+                <Link className='link'to='/'><li>SIGN OUT</li></Link>
             </ul>
             </div>
             </div>
-                {/* <button onClick={()=>{console.log(this.props);
-                }}>CLICK</button> */}
+               
             </div>
-            <div className={this.state.toggle ? 'dropdown' : 'dropdown hide'}>
+            {/* <div className={this.state.toggleNav===false ? 'dropdown hide' : 'dropdown hide'}>
             <ul>
                 <li>HOME</li>
                 <li>ANIMALS</li>
                 <li>ADOPTERS</li>
                 <li>SIGN OUT</li>
             </ul>
-            </div>
+            </div> */}
             </div>
         )
     }

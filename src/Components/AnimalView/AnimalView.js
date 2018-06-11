@@ -18,7 +18,9 @@ class AnimalView extends Component{
         return(
             <div className='animalview'>
                 <br/>
+                <div className="animalName">
                 {a.animal_name}
+                </div>
                 <br/>
                 {`${a.microchip}`}
             </div>

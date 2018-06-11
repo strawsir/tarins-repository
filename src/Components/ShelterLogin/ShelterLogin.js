@@ -6,12 +6,12 @@
 //state should be passed to all of the other components.
 
 import React, {Component} from 'react';
-import axios from 'axios';
 import {Link} from 'react-router-dom'
 import logo from './pawprint.png'
 import './ShelterLogin.css'
 import {currentUser, setCode} from '../../ducks/users'
 import {connect} from 'react-redux'
+
 
 let theUser = {};
 class ShelterLogin extends Component{
@@ -22,11 +22,15 @@ class ShelterLogin extends Component{
             username: 'none',
             password: 'none',
         }
-        // this.updateID = this.updateID.bind(this);
+        
     }
     
+    componentDidUpdate(){
+        this.getCurrentUser();
+    }
 
    
+  
 
     //UPDATE STATE
     updateID(e){
@@ -47,29 +51,42 @@ class ShelterLogin extends Component{
 
     setAnimals(){
         this.props.setCode(this.props.user.code);
-        console.log(this.props);
+        console.log('set', this.props);
         
     }
+    
    
 
     render(){
+        
         return(
-            <div>
+            <div className="behind">
+            <div className='loginMain'>
+            <style>
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+</style>
                 <div className="top">shelterhelper</div>
                 <div className="loginbox">
                 <div className="logo">
-                <img src={logo} alt=""/>
+                <img className='imgLogo' src={logo} alt=""/>
                 </div>
                 <div className="input">
+                
                 <input type="text" placeholder='SHELTER ID' onChange={(e)=>{this.updateID(e.target.value)}}/>
                 <input type="text" placeholder='USERNAME' onChange={(e)=>{this.updateUsername(e.target.value)}}/>
-                <input type="text" placeholder='PASSWORD' onChange={(e)=>{this.updatePassword(e.target.value)}}/>
+                <input type="password" placeholder='PASSWORD' onChange={(e)=>{{this.updatePassword(e.target.value)}}}/>
                 </div>
-                <div onMouseOver={()=>{this.getCurrentUser(), console.log(this.props)}} className="login">
-                <Link to='/landing'>Login</Link>
+                <div onMouseOver={()=>{
+                    this.getCurrentUser(), 
+                    console.log(this.props)}} className="login">
+                <Link to={this.state.shelterID==='none'&&this.state.username==='none'&&this.state.password==='none' ? '/':
+                '/landing'} >
+                Login
+                </Link>
                 </div>
                 </div>
             </div>
+                </div>
         )
     }
 

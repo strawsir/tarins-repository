@@ -5,11 +5,13 @@ const initialState = {
             user:{},
             animals:[],
             code:'',
-            animalCount:0
+            animalCount:0,
+            currentAnimal:{}
 }
 
 const GET_USERS = 'GET_USERS'
 const CURRENT = 'CURRENT'
+const CURRENT_ANIMAL = 'CURRENT_ANIMAL'
 const ANIMALS = 'ANIMALS'
 const SET_CODE = 'SET_CODE'
 const COUNT = 'COUNT'
@@ -41,6 +43,17 @@ export function currentUser(username='1', password='1', shelterID='test01'){
     }
 }
 
+export function currentAnimal(id){
+let animalData = axios.get(`./api/animal/${id}`).then(res=>{
+    return res.data
+}).catch(err=>console.log(err))
+
+return{
+    type: CURRENT_ANIMAL,
+    payload: animalData
+}
+}
+
 export function getAnimals(shelterID='test01'){
     let data = axios.get(`./api/animals/${shelterID}`).then(res=>{
         console.log('function', res.data)
@@ -69,6 +82,8 @@ export default function reducer(state = initialState, action){
             return Object.assign({}, state, {user: action.payload[0]})
         case SET_CODE:
             return Object.assign({}, state, {code: action.payload})
+        case CURRENT_ANIMAL:
+            return Object.assign({}, state, {currentAnimal: action.payload[0]})
       
     
         default:

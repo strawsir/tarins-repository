@@ -1,0 +1,77 @@
+.noDis{
+    display: none;
+}
+
+.infoInput{
+    background: #eaedf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    
+
+}
+.rightAdd{
+    background: whitesmoke;
+    height: 51%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.leftAdd{
+   background: whitesmoke;
+    height: 51%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.addButtonDiv{
+    margin: 2%;
+}
+
+.inputBox{
+    height: 25px;
+    width: 200px;
+    background: whitesmoke;
+}
+
+@media(min-width:992px){
+    .infoAdd{
+        height: 90vh;
+        width: 90vw;
+        max-width: 700px;
+        background-image: url(https://purepng.com/public/uploads/large/51502305652ykjjrpkix5ibhekbh61vyogizh6sq5fop8tmgjzbx6i323glfsl2q550xj5ylqe68a8g06k1loratqtbzabj7mxvw1xwjjwpdus8.png.pagespeed.ce.CDpCtrmVLF.png);
+        background-repeat: no-repeat;
+        background-position: 70% 90%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media(max-width:991px){
+    .infoAdd{
+        height: 90vh;
+        width: 90vw;
+        max-width: 700px;
+        background-image: url(https://www.sierrafishandpets.com/wp-content/uploads/2016/03/standingpuppy.png);
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position: 100% 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

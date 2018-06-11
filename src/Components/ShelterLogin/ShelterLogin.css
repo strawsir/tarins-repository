@@ -1,15 +1,35 @@
-img{
+
+.loginMain{
+    height: 100vh;
+    background-image: url(./images/bkglogin.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    
+}
+
+.behind{
+    background: #eaedf2;
+}
+.imgLogo{
     padding-top: 2%;
     height: auto;
-    width: 20vw;
+    width: 40%;
 }
 .top{
-    padding: 5%;
+    padding: 4%;
+    font-family: 'Comfortaa', cursive;
+    font-size: 8vh;
 }
 .loginbox{
-    background: gray;
+    background: rgba(80, 80, 80, 0.356);
+    border-radius: 5%;
     width: 65vw;
-    margin-left: 17.5vw;
+    max-width: 500px;
+    max-height: 500px;
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,16 +37,24 @@ img{
 .input{
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 55%;
     align-items: center;
+}
+.input>input{
+    width: 100%;
+    padding: 2%;
+    margin: 1%;
 }
 input{
     align-self: center;
     
 }
 .login{
+    height: 5%;
     margin: 5%;
     padding: 5%;
     border-radius: 10%;
     background: white;
+    font-family: 'Comfortaa', cursive; 
+    font-size: 18px;
 }
