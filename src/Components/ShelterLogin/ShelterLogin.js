@@ -6,6 +6,7 @@
 //state should be passed to all of the other components.
 
 import React, {Component} from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom'
 import logo from './pawprint.png'
 import './ShelterLogin.css'
@@ -21,15 +22,46 @@ class ShelterLogin extends Component{
             shelterID:'none',
             username: 'none',
             password: 'none',
+            breeds: {},
+            doggo: '',
+            vowel: false
         }
         
+    }
+    componentDidMount(){
+        let num = Math.floor(Math.random()*83)
+        axios.get('https://dog.ceo/api/breeds/list/all').then(res=>{
+            let breeds = res.data.message;
+            let doggo = [];
+            Object.entries(breeds).map(([key, value])=>{
+                let wholeDoggo=``
+                if(value[0]){
+                    let names = value.length;
+                    let number = Math.floor(Math.random()*names)
+                    console.log('val', value[number], key)
+                    wholeDoggo = `${value[number]} ${key}`
+                }else{ wholeDoggo = `${key}`}
+                console.log('whole', wholeDoggo)
+                doggo.push(wholeDoggo)
+            })
+            console.log('get', doggo[num])
+            this.setState({doggo: doggo[num]})
+            let split = this.state.doggo.split('')
+            if(split[0]==='a' || split[0]==='e'||split[0]==='i'||
+            split[0]==='o'||split[0]==='u'){
+                this.setState({vowel:true})
+                console.log(split[0])
+                console.log('vo', this.state.vowel)
+            }else{ console.log('other' ,split[0])}
+        })
     }
     
     componentDidUpdate(){
         this.getCurrentUser();
+        
+        
     }
 
-   
   
 
     //UPDATE STATE
@@ -51,7 +83,7 @@ class ShelterLogin extends Component{
 
     setAnimals(){
         this.props.setCode(this.props.user.code);
-        console.log('set', this.props);
+        
         
     }
     
@@ -85,7 +117,15 @@ class ShelterLogin extends Component{
                 </Link>
                 </div>
                 </div>
+            <div>
+            {this.state.vowel===false ? `Psst! You should get a ${this.state.doggo}!`
+             : `Psst! You should get an ${this.state.doggo}`}
+            
+              
+                
             </div>
+            </div>
+            
                 </div>
         )
     }
